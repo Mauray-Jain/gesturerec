@@ -82,8 +82,6 @@ while True:
         for idx in range(len(hand_landmarks_list)):
             hand_landmarks = hand_landmarks_list[idx]
             handedness = handedness_list[idx]
-            x_coordinates = [landmark.x for landmark in hand_landmarks]
-            y_coordinates = [landmark.y for landmark in hand_landmarks]
 
             datapt = {
                 "gesture": gesname,
