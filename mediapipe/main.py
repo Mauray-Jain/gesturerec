@@ -65,6 +65,7 @@ video.set(cv.CAP_PROP_FRAME_HEIGHT, 480)
 while True:
     success, frame = video.read()
     if not success:
+        print("Couldnt capture")
         break
 
     k = cv.waitKey(1) & 0xff
@@ -98,7 +99,7 @@ while True:
         for i in range(pred.shape[0]):
             p = np.argmax(pred[i])
             if pred[i][p] > 0.99:
-                print(pred[i][p])
+                # print(pred[i][p])
                 prediction[i] = gestmap[p]
 
     annotated_image = draw_landmarks_on_image(image.numpy_view(), detection_result, prediction)
